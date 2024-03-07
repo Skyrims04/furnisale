@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Listbarang;
+use App\Http\Controllers\Login;
+use App\Http\Controllers\Regist;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,6 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/Contact', [HomeController::class, 'Contact']);
+Route::get('/Listbarang_view', [Listbarang::class, 'tampilkan']);
+Route::get('/Login', [Login::class, 'Login']);
+Route::get('/Regist', [Regist::class, 'Regist']);
