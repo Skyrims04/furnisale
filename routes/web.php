@@ -6,6 +6,7 @@ use App\Http\Controllers\Listbarang;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Regist;
 use App\Http\Controllers\test;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::get('/Listbarang_view', [Listbarang::class, 'tampilkan']);
 Route::get('/Login', [Login::class, 'Login']);
 Route::get('/Regist', [Regist::class, 'Regist']);
 Route::get('/test', [test::class, 'test']);
+
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerSave')->name('register.save');
+});
